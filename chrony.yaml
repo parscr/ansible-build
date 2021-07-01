@@ -1,0 +1,27 @@
+---
+- hosts: all
+  user: ansible
+  become: yes 
+
+  tasks:
+    - name: Install chrony
+      yum: 
+        name: chrony 
+        state: present
+
+    - name: Configure chrony
+      template: 
+        src: chrony.conf.j2 
+        dest: /etc/chrony.conf
+      notify: restart chrony
+
+    - name: Start the chronyd service
+      service: 
+        name: chronyd.service 
+        state: started 
+        enabled: yes
+
+    - name: restart chrony
+      service:
+        name: chronyd
+        state: restarted
