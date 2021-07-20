@@ -1,0 +1,7 @@
+
+[31m############################################################[0m
+[31m#	       Welcome to {{ ansible_hostname }}                       #[0m
+[31m#      All connections are monitored and recorded          #[0m 
+[31m# Disconnect IMMEDIATELY if you are not an authorized user #[0m
+[31m############################################################[0m
+

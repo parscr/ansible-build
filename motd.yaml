@@ -1,0 +1,14 @@
+---
+- hosts: 10.200.36.37
+  user: ansible
+  become: yes 
+
+  tasks:
+    - name: Setup MOTD using template
+      template:
+        src: motd
+        dest: /etc/motd
+        owner: root
+        group: root
+        mode: 0644
+
